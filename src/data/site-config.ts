@@ -7,7 +7,7 @@ export const siteConfig = {
   ogImage: '/og-image.jpg',
   primaryCta: 'Design Your Workforce',
   secondaryCta: 'See How It Works',
-  web3formsKey: '01cd4d60-18e0-403b-b3e3-8825c428dfed',
+  web3formsKey: 'f4c97e8d-91b9-46ea-9031-34d284e442a0',
 };
 
 export const nav = {
