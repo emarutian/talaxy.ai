@@ -1,0 +1,29 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import AudienceCard from '../ui/AudienceCard.astro';
+import { audience } from '../../data/site-config';
+---
+
+<section class="py-24 sm:py-32 bg-space-800">
+  <div class="section-container">
+    <div class="animate-on-scroll">
+      <SectionHeader
+        eyebrow={audience.eyebrow}
+        headline={audience.headline}
+        subtitle={audience.subtitle}
+      />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {audience.segments.map((segment, i) => (
+        <div class="animate-on-scroll" style={`transition-delay: ${i * 100}ms`}>
+          <AudienceCard
+            title={segment.title}
+            description={segment.description}
+            range={segment.range}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

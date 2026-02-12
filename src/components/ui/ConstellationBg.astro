@@ -1,0 +1,67 @@
+---
+// Build-time SVG constellation with CSS-only animation
+const nodes = [
+  { cx: 120, cy: 80, r: 2.5, delay: 0 },
+  { cx: 350, cy: 150, r: 3, delay: 0.5 },
+  { cx: 580, cy: 60, r: 2, delay: 1 },
+  { cx: 800, cy: 200, r: 3.5, delay: 1.5 },
+  { cx: 200, cy: 300, r: 2, delay: 2 },
+  { cx: 450, cy: 350, r: 2.5, delay: 0.8 },
+  { cx: 700, cy: 320, r: 2, delay: 1.2 },
+  { cx: 900, cy: 100, r: 3, delay: 0.3 },
+  { cx: 150, cy: 450, r: 2.5, delay: 1.8 },
+  { cx: 600, cy: 480, r: 2, delay: 0.6 },
+  { cx: 850, cy: 420, r: 3, delay: 1.1 },
+  { cx: 400, cy: 500, r: 2.5, delay: 2.2 },
+  { cx: 100, cy: 180, r: 2, delay: 0.4 },
+  { cx: 950, cy: 300, r: 2.5, delay: 1.7 },
+];
+
+const lines = [
+  [0, 1], [1, 2], [2, 3], [1, 5], [4, 5],
+  [5, 6], [6, 3], [3, 7], [4, 8], [5, 9],
+  [6, 10], [9, 11], [0, 12], [10, 13], [8, 11],
+];
+---
+
+<div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+  <svg
+    class="w-full h-full opacity-30"
+    viewBox="0 0 1000 550"
+    preserveAspectRatio="xMidYMid slice"
+    fill="none"
+  >
+    {lines.map(([from, to]) => (
+      <line
+        x1={nodes[from].cx}
+        y1={nodes[from].cy}
+        x2={nodes[to].cx}
+        y2={nodes[to].cy}
+        stroke="#D4AF37"
+        stroke-width="0.5"
+        stroke-opacity="0.2"
+      />
+    ))}
+    {nodes.map((node) => (
+      <circle
+        cx={node.cx}
+        cy={node.cy}
+        r={node.r}
+        fill="#D4AF37"
+        class="constellation-node"
+        style={`animation-delay: ${node.delay}s`}
+      />
+    ))}
+  </svg>
+</div>
+
+<style>
+  .constellation-node {
+    animation: constellationPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes constellationPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+</style>

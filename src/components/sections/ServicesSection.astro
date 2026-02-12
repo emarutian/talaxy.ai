@@ -1,0 +1,30 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import ServiceCard from '../ui/ServiceCard.astro';
+import { services } from '../../data/site-config';
+---
+
+<section id="services" class="py-24 sm:py-32 bg-space-800">
+  <div class="section-container">
+    <div class="animate-on-scroll">
+      <SectionHeader
+        eyebrow={services.eyebrow}
+        headline={services.headline}
+        subtitle={services.subtitle}
+      />
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+      {services.cards.map((card, i) => (
+        <div class="animate-on-scroll" style={`transition-delay: ${i * 150}ms`}>
+          <ServiceCard
+            title={card.title}
+            description={card.description}
+            features={card.features}
+            icon={card.icon as 'search' | 'automation'}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

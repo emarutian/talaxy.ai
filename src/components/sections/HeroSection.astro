@@ -1,0 +1,39 @@
+---
+import ConstellationBg from '../ui/ConstellationBg.astro';
+import Button from '../ui/Button.astro';
+import { hero } from '../../data/site-config';
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-space-800 via-space-900 to-space-900" aria-hidden="true"></div>
+
+  <!-- Constellation -->
+  <ConstellationBg />
+
+  <!-- Radial glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-400/[0.03] rounded-full blur-[120px]" aria-hidden="true"></div>
+
+  <div class="relative section-container text-center py-32 sm:py-40">
+    <p class="text-gold-400 font-medium text-sm tracking-widest uppercase mb-6 animate-fade-in-up">
+      AI-Powered Workforce Solutions
+    </p>
+    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-cream leading-[1.1] max-w-4xl mx-auto mb-6 animate-fade-in-up" style="animation-delay: 0.1s">
+      {hero.headline}
+    </h1>
+    <p class="text-silver-300 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-in-up" style="animation-delay: 0.2s">
+      {hero.subheadline}
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.3s">
+      <Button href={hero.primaryCta.href} variant="primary" size="lg">
+        {hero.primaryCta.label}
+      </Button>
+      <Button href={hero.secondaryCta.href} variant="outline" size="lg">
+        {hero.secondaryCta.label}
+      </Button>
+    </div>
+  </div>
+
+  <!-- Bottom fade -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-space-900 to-transparent" aria-hidden="true"></div>
+</section>

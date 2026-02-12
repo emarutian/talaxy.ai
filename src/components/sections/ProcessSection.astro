@@ -1,0 +1,33 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import ProcessStep from '../ui/ProcessStep.astro';
+import { process } from '../../data/site-config';
+---
+
+<section id="process" class="py-24 sm:py-32 bg-space-900">
+  <div class="section-container">
+    <div class="animate-on-scroll">
+      <SectionHeader
+        eyebrow={process.eyebrow}
+        headline={process.headline}
+        subtitle={process.subtitle}
+      />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
+      <!-- Connecting line (desktop only) -->
+      <div class="hidden md:block absolute top-8 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent" aria-hidden="true"></div>
+
+      {process.steps.map((step, i) => (
+        <div class="animate-on-scroll" style={`transition-delay: ${i * 150}ms`}>
+          <ProcessStep
+            number={step.number}
+            title={step.title}
+            description={step.description}
+            icon={step.icon as 'audit' | 'design' | 'deploy'}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

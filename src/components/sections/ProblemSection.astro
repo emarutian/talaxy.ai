@@ -1,0 +1,30 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+import { problem } from '../../data/site-config';
+---
+
+<section class="py-24 sm:py-32 bg-space-900">
+  <div class="section-container">
+    <div class="animate-on-scroll">
+      <SectionHeader
+        eyebrow={problem.eyebrow}
+        headline={problem.headline}
+        subtitle={problem.subtitle}
+      />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      {problem.points.map((point, i) => (
+        <div
+          class="animate-on-scroll glass p-6 sm:p-8 text-center"
+          style={`transition-delay: ${i * 100}ms`}
+        >
+          <p class="font-serif text-3xl sm:text-4xl font-bold text-gradient-gold mb-2">
+            {point.stat}
+          </p>
+          <p class="text-silver-300 text-sm leading-relaxed">{point.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
