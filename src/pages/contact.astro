@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import ContactForm from '../components/ui/ContactForm.astro';
+---
+
+<BaseLayout title="Contact Talaxy.ai — Get in Touch" description="Reach out to Talaxy.ai to discuss AI-powered talent search and white-collar automation for your growing team. We respond within 24 hours.">
+  <section class="py-24 sm:py-32">
+    <div class="section-container max-w-3xl">
+      <p class="text-gold-400 font-medium text-sm tracking-widest uppercase mb-6">Contact</p>
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold text-cream mb-4">Get in Touch</h1>
+      <p class="text-silver-300 text-lg leading-relaxed mb-10">
+        Tell us about your team, your challenges, and your goals. We'll design a workforce strategy powered by AI and get back to you within 24 hours.
+      </p>
+
+      <div class="glass p-8 sm:p-10">
+        <ContactForm />
+      </div>
+
+      <div class="mt-12 space-y-4 text-silver-300 text-[15px]">
+        <h2 class="font-serif text-xl text-cream mb-3">Other Ways to Reach Us</h2>
+        <p>
+          <strong class="text-silver-200">Email:</strong> <a href="mailto:hello@talaxy.ai" class="text-gold-400 hover:text-gold-300 transition-colors">hello@talaxy.ai</a>
+        </p>
+        <p>
+          <strong class="text-silver-200">Location:</strong> South San Francisco, California
+        </p>
+        <p>
+          <strong class="text-silver-200">Response time:</strong> We typically respond within one business day.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

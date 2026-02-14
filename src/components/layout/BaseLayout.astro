@@ -6,11 +6,15 @@ import Footer from './Footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  datePublished?: string;
+  author?: string;
 }
 
 const {
   title = 'Talaxy.ai — Build Your Workforce Constellation',
   description = 'Talaxy.ai helps growing companies find the right talent with AI-powered search and automate white-collar work — so your team is built to scale.',
+  datePublished,
+  author,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, 'https://talaxy.ai');
@@ -44,6 +48,9 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://talaxy.ai');
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://talaxy.ai/og-image.jpg" />
+
+    {datePublished && <meta property="article:published_time" content={datePublished} />}
+    {author && <meta name="author" content={author} />}
 
     <!-- Preload critical assets -->
     <link rel="preload" href="/images/talaxy-icon.svg" as="image" type="image/svg+xml" />

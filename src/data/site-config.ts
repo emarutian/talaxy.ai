@@ -17,14 +17,14 @@ export const nav = {
     { label: 'Results', href: '/#results' },
     { label: 'About', href: '/about' },
   ],
-  cta: { label: 'Get Started', href: '/#contact' },
+  cta: { label: 'Get Started', href: '/contact' },
 };
 
 export const hero = {
   headline: 'Build Your Workforce Constellation',
   subheadline:
     'AI-powered talent search and white-collar automation — so your team is built to scale.',
-  primaryCta: { label: 'Design Your Workforce', href: '/#contact' },
+  primaryCta: { label: 'Design Your Workforce', href: '/contact' },
   secondaryCta: { label: 'See How It Works', href: '/#process' },
 };
 
