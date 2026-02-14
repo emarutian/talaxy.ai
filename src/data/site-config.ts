@@ -12,19 +12,19 @@ export const siteConfig = {
 
 export const nav = {
   links: [
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'Results', href: '#results' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Process', href: '/#process' },
+    { label: 'Results', href: '/#results' },
   ],
-  cta: { label: 'Get Started', href: '#contact' },
+  cta: { label: 'Get Started', href: '/#contact' },
 };
 
 export const hero = {
   headline: 'Build Your Workforce Constellation',
   subheadline:
     'AI-powered talent search and white-collar automation — so your team is built to scale.',
-  primaryCta: { label: 'Design Your Workforce', href: '#contact' },
-  secondaryCta: { label: 'See How It Works', href: '#process' },
+  primaryCta: { label: 'Design Your Workforce', href: '/#contact' },
+  secondaryCta: { label: 'See How It Works', href: '/#process' },
 };
 
 export const problem = {
