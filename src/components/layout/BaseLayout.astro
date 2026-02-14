@@ -80,6 +80,20 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://talaxy.ai');
             contactType: 'customer service',
             availableLanguage: 'English',
           },
+          founder: {
+            '@type': 'Person',
+            name: 'Erik Marutian',
+            url: 'https://talaxy.ai/about',
+            jobTitle: 'Founder & CEO',
+            sameAs: [
+              'https://www.linkedin.com/in/erik-marutian/',
+              'https://x.com/aitechguy1',
+            ],
+            alumniOf: {
+              '@type': 'CollegeOrUniversity',
+              name: 'University of California, Davis',
+            },
+          },
         },
         {
           '@type': 'WebSite',

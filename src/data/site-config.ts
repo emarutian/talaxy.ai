@@ -15,6 +15,7 @@ export const nav = {
     { label: 'Services', href: '/#services' },
     { label: 'Process', href: '/#process' },
     { label: 'Results', href: '/#results' },
+    { label: 'About', href: '/about' },
   ],
   cta: { label: 'Get Started', href: '/#contact' },
 };
