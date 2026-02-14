@@ -58,6 +58,11 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://talaxy.ai');
         '@type': 'Article',
         headline: title,
         description: description,
+        image: 'https://talaxy.ai/og-image.jpg',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://talaxy.ai${Astro.url.pathname}`,
+        },
         datePublished: datePublished,
         dateModified: datePublished,
         author: {
