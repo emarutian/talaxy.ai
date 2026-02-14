@@ -6,46 +6,81 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
   <section class="py-24 sm:py-32">
     <div class="section-container max-w-3xl">
       <h1 class="font-serif text-4xl sm:text-5xl font-bold text-cream mb-4">Privacy Policy</h1>
-      <p class="text-silver-400 text-sm mb-12">Last updated: February 12, 2026</p>
+      <p class="text-silver-400 text-sm mb-12">Last updated: February 14, 2026</p>
 
       <div class="prose-dark space-y-8 text-silver-300 text-[15px] leading-relaxed">
         <div>
           <h2 class="font-serif text-xl text-cream mb-3">1. Information We Collect</h2>
-          <p>When you use our contact form, we collect the information you provide, including your name, email address, company name, and message content. We do not collect personal data through cookies or tracking scripts beyond basic analytics.</p>
+          <p>When you use our contact form, we collect the information you provide, including your name, email address, phone number, company name, and message content. We do not collect personal data through cookies or tracking scripts beyond basic analytics.</p>
+          <p class="mt-2">If you opt in to receive SMS/text messages, we collect your mobile phone number and your consent preferences (transactional and/or marketing messages).</p>
         </div>
 
         <div>
           <h2 class="font-serif text-xl text-cream mb-3">2. How We Use Your Information</h2>
-          <p>We use the information you submit solely to respond to your inquiry, communicate about our services, and improve our offerings. We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
+          <p>We use the information you submit to:</p>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-silver-400">
+            <li>Respond to your inquiry and communicate about our services</li>
+            <li>Send transactional SMS messages (e.g., appointment reminders, service updates, account notifications) if you have opted in</li>
+            <li>Send marketing and promotional SMS messages about our services and offers if you have separately opted in</li>
+            <li>Improve our offerings and customer experience</li>
+          </ul>
+          <p class="mt-2">We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
         </div>
 
         <div>
-          <h2 class="font-serif text-xl text-cream mb-3">3. Data Storage &amp; Security</h2>
-          <p>Form submissions are processed through Web3Forms, a GDPR-compliant service that transmits data over HTTPS. We store your information only as long as necessary to fulfill the purpose for which it was collected.</p>
+          <h2 class="font-serif text-xl text-cream mb-3">3. SMS/Text Messaging</h2>
+          <p>By opting in to SMS messaging on our contact form, you consent to receive text messages from Talaxy.ai at the mobile number you provided. There are two separate types of SMS consent:</p>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-silver-400">
+            <li><strong class="text-silver-300">Transactional messages:</strong> Service-related communications such as appointment reminders, account alerts, and status updates.</li>
+            <li><strong class="text-silver-300">Marketing messages:</strong> Promotional offers, service announcements, and other marketing communications.</li>
+          </ul>
+          <p class="mt-3"><strong class="text-silver-200">Message frequency:</strong> Message frequency may vary depending on your interactions and the type of messages you opted into.</p>
+          <p class="mt-2"><strong class="text-silver-200">Message and data rates:</strong> Message and data rates may apply. Please contact your wireless carrier for details about your messaging plan.</p>
+          <p class="mt-2"><strong class="text-silver-200">Opt-out:</strong> You can opt out of SMS messages at any time by replying <strong class="text-cream">STOP</strong> to any message you receive from us. After opting out, you will receive a one-time confirmation message and no further texts will be sent.</p>
+          <p class="mt-2"><strong class="text-silver-200">Help:</strong> For help, reply <strong class="text-cream">HELP</strong> to any message or contact us at <a href="mailto:hello@talaxy.ai" class="text-gold-400 hover:text-gold-300 transition-colors">hello@talaxy.ai</a>.</p>
+          <p class="mt-2"><strong class="text-silver-200">SMS consent sharing:</strong> We do not share your SMS consent or mobile phone number with third parties or affiliates for marketing purposes. Your mobile information will not be shared with or sold to third parties/affiliates for promotional purposes. We may share your mobile number with our SMS service provider solely for the purpose of delivering text messages you have consented to receive.</p>
         </div>
 
         <div>
-          <h2 class="font-serif text-xl text-cream mb-3">4. Third-Party Services</h2>
+          <h2 class="font-serif text-xl text-cream mb-3">4. Cookies &amp; Tracking Practices</h2>
+          <p>Our website uses basic analytics provided by our hosting platform (Vercel) to understand general traffic patterns. We do not use third-party advertising cookies or tracking pixels. Google Fonts are loaded for typography, which may involve a standard request to Google's servers.</p>
+        </div>
+
+        <div>
+          <h2 class="font-serif text-xl text-cream mb-3">5. Data Storage &amp; Security</h2>
+          <p>Form submissions are processed through Web3Forms, a GDPR-compliant service that transmits data over HTTPS. We store your information only as long as necessary to fulfill the purpose for which it was collected. Phone numbers collected for SMS messaging are retained only while you have an active opt-in and are securely deleted upon opt-out.</p>
+        </div>
+
+        <div>
+          <h2 class="font-serif text-xl text-cream mb-3">6. Third-Party Services</h2>
           <p>Our website may use the following third-party services:</p>
           <ul class="list-disc list-inside mt-2 space-y-1 text-silver-400">
             <li>Web3Forms — for contact form processing</li>
             <li>Vercel — for website hosting and analytics</li>
             <li>Google Fonts — for typography</li>
+            <li>SMS service provider — for delivering text messages (only your phone number and message content are shared for delivery purposes)</li>
           </ul>
         </div>
 
         <div>
-          <h2 class="font-serif text-xl text-cream mb-3">5. Your Rights</h2>
-          <p>You have the right to request access to, correction of, or deletion of your personal data. To exercise these rights, contact us at <a href="mailto:hello@talaxy.ai" class="text-gold-400 hover:text-gold-300 transition-colors">hello@talaxy.ai</a>.</p>
+          <h2 class="font-serif text-xl text-cream mb-3">7. Your Rights</h2>
+          <p>You have the right to:</p>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-silver-400">
+            <li>Request access to, correction of, or deletion of your personal data</li>
+            <li>Opt out of SMS messages at any time by texting STOP</li>
+            <li>Request information about what data we hold about you</li>
+            <li>Withdraw consent for communications at any time</li>
+          </ul>
+          <p class="mt-2">To exercise these rights, contact us at <a href="mailto:hello@talaxy.ai" class="text-gold-400 hover:text-gold-300 transition-colors">hello@talaxy.ai</a>.</p>
         </div>
 
         <div>
-          <h2 class="font-serif text-xl text-cream mb-3">6. Changes to This Policy</h2>
+          <h2 class="font-serif text-xl text-cream mb-3">8. Changes to This Policy</h2>
           <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated revision date.</p>
         </div>
 
         <div>
-          <h2 class="font-serif text-xl text-cream mb-3">7. Contact</h2>
+          <h2 class="font-serif text-xl text-cream mb-3">9. Contact</h2>
           <p>If you have questions about this privacy policy, please contact us at <a href="mailto:hello@talaxy.ai" class="text-gold-400 hover:text-gold-300 transition-colors">hello@talaxy.ai</a>.</p>
         </div>
       </div>

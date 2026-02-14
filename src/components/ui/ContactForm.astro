@@ -15,7 +15,7 @@ import { siteConfig } from '../../data/site-config';
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
     <div>
-      <label for="name" class="block text-sm font-medium text-silver-300 mb-2">Name</label>
+      <label for="name" class="block text-sm font-medium text-silver-300 mb-2">Name <span class="text-gold-400">*</span></label>
       <input
         type="text"
         id="name"
@@ -26,7 +26,21 @@ import { siteConfig } from '../../data/site-config';
       />
     </div>
     <div>
-      <label for="email" class="block text-sm font-medium text-silver-300 mb-2">Email</label>
+      <label for="phone" class="block text-sm font-medium text-silver-300 mb-2">Phone <span class="text-gold-400">*</span></label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        placeholder="(555) 123-4567"
+        class="w-full px-4 py-3 bg-white/[0.04] border border-white/10 rounded-xl text-cream placeholder:text-silver-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/40 focus:border-transparent transition-all duration-200"
+      />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label for="email" class="block text-sm font-medium text-silver-300 mb-2">Email <span class="text-gold-400">*</span></label>
       <input
         type="email"
         id="email"
@@ -36,21 +50,20 @@ import { siteConfig } from '../../data/site-config';
         class="w-full px-4 py-3 bg-white/[0.04] border border-white/10 rounded-xl text-cream placeholder:text-silver-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/40 focus:border-transparent transition-all duration-200"
       />
     </div>
+    <div>
+      <label for="company" class="block text-sm font-medium text-silver-300 mb-2">Company</label>
+      <input
+        type="text"
+        id="company"
+        name="company"
+        placeholder="Company name"
+        class="w-full px-4 py-3 bg-white/[0.04] border border-white/10 rounded-xl text-cream placeholder:text-silver-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/40 focus:border-transparent transition-all duration-200"
+      />
+    </div>
   </div>
 
   <div>
-    <label for="company" class="block text-sm font-medium text-silver-300 mb-2">Company</label>
-    <input
-      type="text"
-      id="company"
-      name="company"
-      placeholder="Company name"
-      class="w-full px-4 py-3 bg-white/[0.04] border border-white/10 rounded-xl text-cream placeholder:text-silver-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/40 focus:border-transparent transition-all duration-200"
-    />
-  </div>
-
-  <div>
-    <label for="message" class="block text-sm font-medium text-silver-300 mb-2">How can we help?</label>
+    <label for="message" class="block text-sm font-medium text-silver-300 mb-2">How can we help? <span class="text-gold-400">*</span></label>
     <textarea
       id="message"
       name="message"
@@ -59,6 +72,33 @@ import { siteConfig } from '../../data/site-config';
       placeholder="Tell us about your team, challenges, and goals..."
       class="w-full px-4 py-3 bg-white/[0.04] border border-white/10 rounded-xl text-cream placeholder:text-silver-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/40 focus:border-transparent transition-all duration-200 resize-none"
     ></textarea>
+  </div>
+
+  <!-- SMS Consent Checkboxes -->
+  <div class="space-y-3">
+    <label class="flex items-start gap-3 cursor-pointer group">
+      <input
+        type="checkbox"
+        name="sms_transactional_consent"
+        value="yes"
+        class="mt-1 w-4 h-4 rounded border-white/20 bg-white/[0.04] text-gold-400 focus:ring-gold-400/40 focus:ring-offset-0 shrink-0"
+      />
+      <span class="text-xs text-silver-400 leading-relaxed">
+        I consent to receive transactional messages from <strong class="text-silver-300">Talaxy.ai</strong> at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Reply HELP for help or STOP to opt-out.
+      </span>
+    </label>
+
+    <label class="flex items-start gap-3 cursor-pointer group">
+      <input
+        type="checkbox"
+        name="sms_marketing_consent"
+        value="yes"
+        class="mt-1 w-4 h-4 rounded border-white/20 bg-white/[0.04] text-gold-400 focus:ring-gold-400/40 focus:ring-offset-0 shrink-0"
+      />
+      <span class="text-xs text-silver-400 leading-relaxed">
+        I consent to receive marketing and promotional messages from <strong class="text-silver-300">Talaxy.ai</strong> at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Reply HELP for help or STOP to opt-out.
+      </span>
+    </label>
   </div>
 
   <button
@@ -72,7 +112,7 @@ import { siteConfig } from '../../data/site-config';
   </button>
 
   <p class="text-xs text-silver-400/60 mt-3">
-    By submitting this form, you consent to Talaxy.ai storing your information to respond to your inquiry. We will never share your data with third parties.
+    By submitting this form, you consent to Talaxy.ai storing your information to respond to your inquiry. We will never share your data with third parties. View our <a href="/privacy" class="text-gold-400/80 hover:text-gold-300 underline">Privacy Policy</a> and <a href="/terms" class="text-gold-400/80 hover:text-gold-300 underline">Terms of Service</a>.
   </p>
 
   <div id="form-result" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
