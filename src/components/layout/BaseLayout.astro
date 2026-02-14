@@ -48,13 +48,21 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://talaxy.ai');
     <!-- Preload critical assets -->
     <link rel="preload" href="/images/talaxy-icon.svg" as="image" type="image/svg+xml" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -66,6 +74,12 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://talaxy.ai');
           url: 'https://talaxy.ai',
           description: 'AI-powered talent search and white-collar automation for SMBs.',
           logo: 'https://talaxy.ai/images/talaxy-logo.svg',
+          contactPoint: {
+            '@type': 'ContactPoint',
+            email: 'hello@talaxy.ai',
+            contactType: 'customer service',
+            availableLanguage: 'English',
+          },
         },
         {
           '@type': 'WebSite',
